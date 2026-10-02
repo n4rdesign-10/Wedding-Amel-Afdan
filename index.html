@@ -11,18 +11,14 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Ephesis&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/aos.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
 
-    <!-- Favicon -->
-   &nbsp; &nbsp; &nbsp; &nbsp;<link rel="icon" type="image/png"
+    <link rel="icon" type="image/png"
           href="https://pdftourl.net/images/1790690322819-a27e57d1-c6ce-408c-bea1-ad7c9edb69cf.jpg">
-
-    <!-- Icon untuk Android / shortcut -->
     <link rel="apple-touch-icon"
           href="https://pdftourl.net/images/1790690322819-a27e57d1-c6ce-408c-bea1-ad7c9edb69cf.jpg">
-
 
     <style>
         :root {
@@ -53,13 +49,11 @@
             overflow-x: hidden;
         }
 
-        /* Subtle film grain — kesan premium */
         body::before {
             content: ''; position: fixed; inset: 0; z-index: 1; pointer-events: none; opacity: .04;
             background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
         }
 
-        /* Orb cahaya di background */
         .orb { position: fixed; border-radius: 50%; filter: blur(100px); pointer-events: none; z-index: 0; }
         .orb-1 { width: 420px; height: 420px; background: rgba(211,181,127,.08); top: -120px; right: -120px; }
         .orb-2 { width: 380px; height: 380px; background: rgba(168,137,79,.06); bottom: -100px; left: -120px; }
@@ -72,7 +66,6 @@
 
         .wrapper { max-width: 520px; margin: 0 auto; position: relative; z-index: 2; }
 
-        /* ===== PARTIKEL EMAS ===== */
         .particle {
             position: fixed; bottom: -12px; border-radius: 50%; pointer-events: none; z-index: 1;
             background: radial-gradient(circle, rgba(232,207,159,.9), rgba(211,181,127,0));
@@ -84,7 +77,6 @@
             100% { transform: translateY(-108vh) translateX(50px); opacity: 0; }
         }
 
-        /* ===== SPLASH ===== */
         .splash {
             position: fixed; inset: 0; z-index: 10000; background: var(--bg);
             display: flex; align-items: center; justify-content: center; text-align: center; padding: 30px;
@@ -109,6 +101,7 @@
         .bismillah { font-size: 1.5rem; color: var(--muted); direction: rtl; margin-bottom: 26px; animation: fadeDown 1s ease .2s both; }
 
         .monogram {
+            /* FIX: height:) 76px → height: 76px */
             width: 76px; height: 76px; margin: 0 auto 26px; border-radius: 50%;
             border: 1px solid rgba(211,181,127,.55); display: grid; place-items: center;
             font-family: var(--font-heading); color: var(--gold); font-size: 1.05rem; letter-spacing: 2px;
@@ -159,7 +152,6 @@
         @keyframes fadeDown { from { opacity: 0; transform: translateY(-18px); } to { opacity: 1; transform: translateY(0); } }
         @keyframes fadeUp { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }
 
-        /* ===== FLOATING BUTTONS ===== */
         .fab {
             position: fixed; z-index: 999; width: 46px; height: 46px; border-radius: 50%; display: none;
             align-items: center; justify-content: center; cursor: pointer; font-size: .95rem;
@@ -170,7 +162,6 @@
         #audio-btn { bottom: 92px; right: max(18px, calc(50% - 242px)); }
         #scroll-top { bottom: 92px; left: max(18px, calc(50% - 242px)); }
 
-        /* ===== BOTTOM NAV ===== */
         .bottom-nav {
             position: fixed; bottom: 16px; left: 50%; z-index: 998;
             display: flex; gap: 2px; padding: 8px; border-radius: 22px;
@@ -190,7 +181,6 @@
         .bottom-nav a:hover { color: var(--text); }
         .bottom-nav a.active { color: var(--gold); background: rgba(211,181,127,.1); }
 
-        /* ===== HERO ===== */
         .hero { height: 100svh; min-height: 560px; position: relative; display: flex; align-items: center; justify-content: center; text-align: center; overflow: hidden; }
         .hero-bg, .hero-bg img { position: absolute; inset: 0; width: 100%; height: 100%; }
         .hero-bg img { object-fit: cover; animation: kenburns 20s ease-in-out infinite alternate; }
@@ -207,7 +197,6 @@
         .hero-hint { position: absolute; bottom: 34px; left: 50%; transform: translateX(-50%); z-index: 2; color: var(--gold); opacity: .55; animation: bounce 2.2s ease-in-out infinite; }
         @keyframes bounce { 0%,100% { transform: translate(-50%, 0); } 50% { transform: translate(-50%, 10px); } }
 
-        /* ===== SECTIONS ===== */
         .section { padding: 92px 26px; text-align: center; position: relative; }
         .section-title { font-family: var(--font-heading); font-size: clamp(1.9rem, 8vw, 2.3rem); font-weight: 400; margin-top: 10px; }
         .head-orn { display: flex; align-items: center; justify-content: center; gap: 12px; margin-top: 16px; margin-bottom: 44px; }
@@ -220,13 +209,11 @@
             backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
         }
 
-        /* Ayat */
         .verse { padding: 40px 30px; position: relative; }
         .verse::before { content: '\201C'; position: absolute; top: 6px; right: 24px; font-family: var(--font-heading); font-size: 4.6rem; color: rgba(211,181,127,.15); line-height: 1; }
         .verse p { font-size: .92rem; font-style: italic; line-height: 2; margin-bottom: 16px; }
         .verse-ref { font-family: var(--font-heading); font-size: .82rem; letter-spacing: .2em; color: var(--gold); text-transform: uppercase; }
 
-        /* Mempelai */
         .couple { margin-bottom: 10px; }
         .c-photo {
             width: 186px; height: 186px; margin: 0 auto 24px; border-radius: 50%; padding: 4px;
@@ -240,7 +227,6 @@
         .amp-divider::before, .amp-divider::after { content: ''; height: 1px; width: 58px; background: linear-gradient(90deg, transparent, rgba(211,181,127,.55)); }
         .amp-divider::after { background: linear-gradient(90deg, rgba(211,181,127,.55), transparent); }
 
-        /* Swiper restu */
         .parent-swiper { padding-bottom: 48px !important; }
         .parent-card { padding: 38px 28px 32px; text-align: left; position: relative; height: 100%; }
         .parent-card .quote { font-size: 1.6rem; color: rgba(211,181,127,.4); margin-bottom: 16px; }
@@ -250,7 +236,6 @@
         .swiper-pagination-bullet { background: #6b645c; opacity: .5; transition: all .3s; }
         .swiper-pagination-bullet-active { background: var(--gold); opacity: 1; width: 22px; border-radius: 5px; }
 
-        /* Timeline */
         .timeline { position: relative; text-align: left; }
         .timeline::before { content: ''; position: absolute; left: 11px; top: 8px; bottom: 8px; width: 1px; background: linear-gradient(180deg, transparent, rgba(211,181,127,.5) 15%, rgba(211,181,127,.5) 85%, transparent); }
         .tl-item { position: relative; padding-left: 44px; margin-bottom: 26px; }
@@ -262,7 +247,6 @@
         .tl-title { font-family: var(--font-heading); font-size: 1.2rem; margin: 7px 0 8px; }
         .tl-desc { font-size: .84rem; color: var(--muted); }
 
-        /* Galeri */
         .gallery { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
         .g-item { position: relative; display: block; border-radius: 16px; overflow: hidden; aspect-ratio: 1; border: 1px solid var(--line); }
         .g-item.wide { grid-column: span 2; aspect-ratio: 2 / 1.15; }
@@ -275,14 +259,12 @@
         .g-item:hover::after { opacity: 1; }
         .g-item:hover img { transform: scale(1.08); }
 
-        /* Countdown */
         .count { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
         .tile { padding: 20px 6px 16px; position: relative; overflow: hidden; }
         .tile::before { content: ''; position: absolute; top: 0; left: 22%; right: 22%; height: 1px; background: linear-gradient(90deg, transparent, var(--gold), transparent); }
         .tile b { display: block; font-family: var(--font-heading); font-weight: 400; font-size: clamp(1.4rem, 7vw, 1.8rem); color: var(--gold-soft); }
         .tile span { font-size: .55rem; font-weight: 700; letter-spacing: .28em; text-transform: uppercase; color: var(--muted); text-indent: .28em; }
 
-        /* Acara */
         .event { padding: 32px 26px; margin-bottom: 18px; text-align: left; }
         .event-head { display: flex; align-items: center; gap: 15px; margin-bottom: 22px; }
         .event-ico { width: 50px; height: 50px; border-radius: 16px; flex-shrink: 0; display: grid; place-items: center; font-size: 1.05rem; color: var(--gold); background: linear-gradient(135deg, rgba(211,181,127,.18), rgba(211,181,127,.04)); border: 1px solid rgba(211,181,127,.3); }
@@ -304,7 +286,6 @@
         .map-box { border-radius: 20px; overflow: hidden; border: 1px solid var(--line); height: 220px; margin-top: 6px; }
         .map-box iframe { width: 100%; height: 100%; border: 0; filter: grayscale(.4) contrast(.95); }
 
-        /* Amplop */
         .gift { padding: 30px 26px; margin-bottom: 16px; }
         .gift-head { display: flex; align-items: center; gap: 14px; margin-bottom: 18px; text-align: left; }
         .gift-head i { width: 44px; height: 44px; border-radius: 14px; flex-shrink: 0; display: grid; place-items: center; color: var(--gold); font-size: 1rem; background: rgba(211,181,127,.1); border: 1px solid rgba(211,181,127,.28); }
@@ -314,18 +295,16 @@
         .btn-copy { background: none; border: none; color: var(--gold); cursor: pointer; font-size: .95rem; padding: 4px; transition: transform .25s; }
         .btn-copy:hover { transform: scale(1.2); }
         .gift-addr { font-size: .85rem; color: var(--muted); line-height: 1.85; text-align: left; }
-        
-        /* Custom Alamat Copy */
-        .gift-addr-copy { 
-            display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; 
-            border: 1px dashed rgba(211,181,127,.4); border-radius: 14px; padding: 13px 18px; 
+
+        .gift-addr-copy {
+            display: flex; align-items: flex-start; justify-content: space-between; gap: 12px;
+            border: 1px dashed rgba(211,181,127,.4); border-radius: 14px; padding: 13px 18px;
             color: var(--text); font-size: .85rem; line-height: 1.6; text-align: left; margin-bottom: 14px;
         }
         .qr-box { text-align: center; margin-top: 16px; }
         .qr-box small { display: block; font-size: .6rem; letter-spacing: .2em; text-transform: uppercase; color: var(--muted); margin-bottom: 8px; }
         .qr-box img { border-radius: 12px; border: 1px solid var(--line); padding: 8px; background: var(--bg-soft); }
 
-        /* RSVP */
         .field { text-align: left; margin-bottom: 18px; }
         .field label { display: block; font-size: .64rem; font-weight: 700; letter-spacing: .3em; text-transform: uppercase; color: var(--gold); margin-bottom: 9px; }
         .field input, .field select, .field textarea {
@@ -350,16 +329,21 @@
         .rsvp-success h3 { font-family: var(--font-heading); font-weight: 400; font-size: 1.4rem; margin-bottom: 8px; }
         .rsvp-success p { font-size: .87rem; color: var(--muted); }
 
-        /* Footer */
+        .pacaran-swiper { margin-top: 30px; overflow: hidden; padding: 0 5px; }
+        .pacaran-swiper .swiper-slide { width: 160px; height: 220px; border-radius: 16px; overflow: hidden; border: 1px solid var(--line); opacity: 0.7; transition: opacity .3s, transform .3s; }
+        .pacaran-swiper .swiper-slide-active { opacity: 1; transform: scale(1.05); }
+        .pacaran-swiper .swiper-slide img { width: 100%; height: 100%; object-fit: cover; }
+
         .footer { padding: 80px 26px 130px; text-align: center; }
+        .footer-logo { width: 70px; height: 70px; border-radius: 50%; border: 2px solid var(--gold); margin: 0 auto 24px; object-fit: cover; display: block; box-shadow: 0 0 0 6px rgba(211,181,127,.1); }
         .footer p.thanks { font-size: .85rem; color: var(--muted); max-width: 310px; margin: 18px auto 8px; }
         .footer-names { font-family: var(--font-script); font-size: 3.4rem; line-height: 1.2; margin: 20px 0 6px;
             background: linear-gradient(115deg, #f0dcb2, #c9a96e 55%, #e8cf9f);
             -webkit-background-clip: text; background-clip: text; color: transparent; }
         .footer-date { font-family: var(--font-heading); font-size: .78rem; letter-spacing: .4em; text-indent: .4em; color: var(--gold); margin-bottom: 28px; }
-        .btn-share { display: inline-flex; align-items: center; gap: 9px; padding: 13px 30px; }
+        .btn-wa { display: inline-flex; align-items: center; gap: 9px; padding: 13px 30px; margin-top: 20px; background: #25D366; color: #fff; border: none; border-radius: 50px; text-decoration: none; font-family: var(--font-body); font-weight: 700; font-size: .75rem; letter-spacing: .2em; text-transform: uppercase; box-shadow: 0 10px 20px rgba(37, 211, 102, .3); transition: transform .3s; }
+        .btn-wa:hover { transform: translateY(-2px); box-shadow: 0 14px 28px rgba(37, 211, 102, .4); }
 
-        /* Toast */
         .toast {
             position: fixed; top: 18px; left: 50%; transform: translate(-50%, -120px); z-index: 10001;
             background: linear-gradient(135deg, var(--gold-soft), var(--gold-deep)); color: #171410;
@@ -368,7 +352,6 @@
         }
         .toast.show { transform: translate(-50%, 0); }
 
-        /* ===== LIST UCAPAN TAMU (FIREBASE) ===== */
         .wishes-wrap { max-height: 380px; overflow-y: auto; padding-right: 4px; text-align: left; margin-top: 8px; }
         .wish-item {
             background: var(--card); border: 1px solid var(--line); border-radius: 16px;
@@ -551,14 +534,11 @@
                 <div class="tl-item" data-aos="fade-up" data-aos-delay="100">
                     <div class="tl-dot"><i class="fas fa-ring"></i></div>
                     <div class="tl-card glass">
-                        
-                        <!-- Daftar Foto Vertikal -->
                         <div class="tl-photos" style="display: flex; flex-direction: column; gap: 10px;">
                             <img src="https://pdftourl.net/images/1790929483926-ea95c8e3-4294-42be-90f5-2df0f09d1962.jpg" alt="Proses Lamaran" loading="lazy" style="width: 100%; height: auto; object-fit: contain;">
                             <img src="https://pdftourl.net/images/1790929538787-0a68c7ad-3828-48f7-a53a-e5aa9b10c65f.jpg" alt="Proses Lamaran" loading="lazy" style="width: 100%; height: auto; object-fit: contain;">
                             <img src="https://pdftourl.net/images/1790929565082-86153ad7-125b-45a5-a31d-d68c2a85dfce.jpg" alt="Proses Lamaran" loading="lazy" style="width: 100%; height: auto; object-fit: contain;">
                         </div>
-                
                         <div class="tl-body">
                             <div class="tl-date">26 Juli 2026</div>
                             <div class="tl-title">Lamaran &amp; Komitmen</div>
@@ -588,7 +568,7 @@
                 <div class="head-orn"><i></i><span class="dia"></span><i></i></div>
             </div>
             <div class="gallery" data-aos="fade-up" data-aos-duration="1000">
-                <a href="https://pdftourl.net/images/1790953780077-2f0e5005-84c5-41ec-94bc-a66a0b17cf5e.jpeg?auto=format&fit=crop&q=80&w=1200" class="glightbox g-item wide"><img src="https://pdftourl.net/images/1790953780077-2f0e5005-84c5-41ec-94bc-a66a0b17cf5e.jpeg?auto=format&fit=crop&q=80&w=600"alt="Momen 1"loading="lazy"style="width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover;"></a>
+                <a href="https://pdftourl.net/images/1790953780077-2f0e5005-84c5-41ec-94bc-a66a0b17cf5e.jpeg?auto=format&fit=crop&q=80&w=1200" class="glightbox g-item wide"><img src="https://pdftourl.net/images/1790953780077-2f0e5005-84c5-41ec-94bc-a66a0b17cf5e.jpeg?auto=format&fit=crop&q=80&w=600" alt="Momen 1" loading="lazy" style="width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover;"></a>
                 <a href="https://pdftourl.net/images/1790942508666-66815329-2f9c-42c6-b516-1ed67098aeec.jpeg?auto=format&fit=crop&q=80&w=1200" class="glightbox g-item"><img src="https://pdftourl.net/images/1790942508666-66815329-2f9c-42c6-b516-1ed67098aeec.jpeg?auto=format&fit=crop&q=80&w=400" alt="Momen 2" loading="lazy"></a>
                 <a href="https://pdftourl.net/images/1790943009151-c5bcacc1-9825-4f0a-9df6-3471e9f1020f.jpeg?auto=format&fit=crop&q=80&w=1200" class="glightbox g-item"><img src="https://pdftourl.net/images/1790943009151-c5bcacc1-9825-4f0a-9df6-3471e9f1020f.jpeg?auto=format&fit=crop&q=80&w=400" alt="Momen 3" loading="lazy"></a>
                 <a href="https://pdftourl.net/images/1790943113158-f92364cc-98d2-4bb5-a2ad-2304d416bc9b.jpeg?auto=format&fit=crop&q=80&w=1200" class="glightbox g-item"><img src="https://pdftourl.net/images/1790943113158-f92364cc-98d2-4bb5-a2ad-2304d416bc9b.jpeg?auto=format&fit=crop&q=80&w=400" alt="Momen 4" loading="lazy"></a>
@@ -620,103 +600,38 @@
                 <h2 class="section-title">Waktu &amp; Tempat</h2>
                 <div class="head-orn"><i></i><span class="dia"></span><i></i></div>
             </div>
-        
-            <!-- AKAD NIKAH -->
             <div class="event glass" data-aos="fade-up" data-aos-duration="1000">
                 <div class="event-head">
-                    <div class="event-ico">
-                        <i class="fas fa-ring"></i>
-                    </div>
+                    <div class="event-ico"><i class="fas fa-ring"></i></div>
                     <div class="event-name">Akad Nikah</div>
                 </div>
-        
-                <div class="event-row">
-                    <i class="far fa-calendar"></i>
-                    <span>Sabtu, 27 Maret 2027</span>
-                </div>
-        
-                <div class="event-row">
-                    <i class="far fa-clock"></i>
-                    <span>08.00 WIB — 09.00 WIB</span>
-                </div>
-        
+                <div class="event-row"><i class="far fa-calendar"></i><span>Sabtu, 27 Maret 2027</span></div>
+                <div class="event-row"><i class="far fa-clock"></i><span>08.00 WIB — 09.00 WIB</span></div>
                 <div class="event-row">
                     <i class="fas fa-location-dot"></i>
-                    <span>
-                        Masjid Jami’ Al - Fajri Pejaten Barat<br>
-                        <small>Jl. Al Fajri No.17 18, RT.18/RW.1, Pejaten Bar., Ps. Minggu, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta 12510</small>
-                    </span>
+                    <span>Masjid Jami' Al - Fajri Pejaten Barat<br><small>Jl. Al Fajri No.17 18, RT.18/RW.1, Pejaten Bar., Ps. Minggu, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta 12510</small></span>
                 </div>
             </div>
-        
-            <!-- RESEPSI -->
-            <div class="event glass"
-                 data-aos="fade-up"
-                 data-aos-duration="1000"
-                 data-aos-delay="100">
-        
+            <div class="event glass" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
                 <div class="event-head">
-                    <div class="event-ico">
-                        <i class="fas fa-champagne-glasses"></i>
-                    </div>
+                    <div class="event-ico"><i class="fas fa-champagne-glasses"></i></div>
                     <div class="event-name">Resepsi Pernikahan</div>
                 </div>
-        
-                <div class="event-row">
-                    <i class="far fa-calendar"></i>
-                    <span>Sabtu, 27 Maret 2027</span>
-                </div>
-        
-                <div class="event-row">
-                    <i class="far fa-clock"></i>
-                    <span>09.00 WIB — 11.00 WIB</span>
-                </div>
-        
+                <div class="event-row"><i class="far fa-calendar"></i><span>Sabtu, 27 Maret 2027</span></div>
+                <div class="event-row"><i class="far fa-clock"></i><span>09.00 WIB — 11.00 WIB</span></div>
                 <div class="event-row">
                     <i class="fas fa-location-dot"></i>
-                    <span>
-                        Masjid Jami’ Al - Fajri Pejaten Barat<br>
-                        <small>Jl. Al Fajri No.17 18, RT.18/RW.1, Pejaten Bar., Ps. Minggu, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta 12510</small>
-                    </span>
+                    <span>Masjid Jami' Al - Fajri Pejaten Barat<br><small>Jl. Al Fajri No.17 18, RT.18/RW.1, Pejaten Bar., Ps. Minggu, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta 12510</small></span>
                 </div>
-        
                 <div class="event-actions">
-        
-                    <!-- GOOGLE CALENDAR -->
-                    <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Pernikahan+Amelia+Kartika+Sari+%26+Afdan+Ramdhan&dates=20270327T010000Z%2F20270327T070000Z&details=Akad+08.00+WIB+%7C+Resepsi+11.00+-+14.00+WIB&location=Jakarta"
-                       target="_blank"
-                       class="btn btn-ghost">
-                        <i class="fas fa-calendar-plus"></i>
-                        Save Date
-                    </a>
-        
-                    <!-- GOOGLE MAPS -->
-                    <a href="https://maps.app.goo.gl/mAN5UgFtXXFo1Ch49?g_st=aw"
-                       target="_blank"
-                       class="btn btn-gold">
-                        <i class="fas fa-diamond-turn-right"></i>
-                        Lokasi
-                    </a>
-        
+                    <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Pernikahan+Amelia+Kartika+Sari+%26+Afdan+Ramdhan&dates=20270327T010000Z%2F20270327T070000Z&details=Akad+08.00+WIB+%7C+Resepsi+11.00+-+14.00+WIB&location=Jakarta" target="_blank" class="btn btn-ghost"><i class="fas fa-calendar-plus"></i> Save Date</a>
+                    <a href="https://maps.app.goo.gl/mAN5UgFtXXFo1Ch49?g_st=aw" target="_blank" class="btn btn-gold"><i class="fas fa-diamond-turn-right"></i> Lokasi</a>
                 </div>
             </div>
-        
-            <!-- MAP -->
             <div class="map-box" data-aos="fade-up" data-aos-duration="1000">
-        
-                <iframe
-                    src="https://www.google.com/maps?q=-6.2696922,106.8394813&z=17&output=embed"
-                    width="100%"
-                    height="450"
-                    style="border:0;"
-                    allowfullscreen=""
-                    loading="lazy"
-                    referrerpolicy="no-referrer-when-downgrade">
-                </iframe>
-        
+                <iframe src="https://www.google.com/maps?q=-6.2696922,/106.8394813&z=17&output=embed" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
         </section>
-
 
         <!-- AMPLOP DIGITAL -->
         <section class="section">
@@ -739,19 +654,13 @@
 
             <div class="gift glass" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
                 <div class="gift-head"><i class="fas fa-gift"></i><div><h3>Kirim Hadiah</h3><small>Alamat Pengiriman (Rumah Amelia Kartika Sari)</small></div></div>
-                
-                <!-- Alamat dengan Tombol Copy -->
                 <div class="gift-addr-copy">
                     <span id="gift-address-text">Jalan Siaga Raya RT18/01 No. 4C, depan alfa siaga 2,Pejaten Barat, Pasar Minggu, Kota Administrasi Jakarta Selatan</span>
                     <button class="btn-copy" onclick="copyToClipboard(document.getElementById('gift-address-text').innerText, this)" title="Salin Alamat"><i class="far fa-copy"></i></button>
                 </div>
-
-                <!-- Tombol Buka Maps -->
                 <a href="https://www.google.com/maps/search/?api=1&query=Jalan+Siaga+Raya+RT18/01+No.+4C,+depan+alfa+siaga+2,+Pejaten+Barat,+Pasar+Minggu,+Kota+Administrasi+Jakarta+Selatan" target="_blank" class="btn btn-gold" style="width: 100%; margin-bottom: 10px;">
                     <i class="fas fa-location-dot"></i> Buka di Google Maps
                 </a>
-
-                <!-- QR Code Menuju Maps (Sudah dikoreksi ke alamat Jl Siaga Raya) -->
                 <div class="qr-box">
                     <small>Scan QR untuk lokasi</small>
                     <img src="https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=https%3A%2F%2Fwww.google.com%2Fmaps%2Fsearch%2F%3Fapi%3D1%26query%3DJalan%2BSiaga%2BRaya%2BRT18%2F01%2BNo.%2B4C%2C%2Bdepan%2Balfa%2Bsiaga%2B2%2C%2BPejaten%2BBarat%2C%2BPasar%2BMinggu%2C%2BKota%2BAdministrasi%2BJakarta%2BSelatan&bgcolor=15130f&color=d3b57f" alt="QR Code Alamat Hadiah" width="150">
@@ -803,7 +712,6 @@
                 <p>Konfirmasi Anda telah kami terima. Semoga Allah memudahkan setiap urusan kami.</p>
             </div>
 
-            <!-- ===== LIST UCAPAN TAMU (BARU) ===== -->
             <div style="margin-top: 56px;" data-aos="fade-up">
                 <span class="eyebrow">Wishes</span>
                 <h2 class="section-title" style="font-size: 1.6rem;">Ucapan &amp; Doa</h2>
@@ -821,13 +729,48 @@
             </div>
         </section>
 
+        <!-- MOMEN PACARAN -->
+        <section class="section" style="padding-top: 20px; padding-bottom: 40px;">
+            <div data-aos="fade-up">
+                <span class="eyebrow">Our Memories</span>
+                <h2 class="section-title">Momen Kita</h2>
+                <div class="head-orn"><i></i><span class="dia"></span><i></i></div>
+            </div>
+            <div class="swiper pacaran-swiper" data-aos="fade-up">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide"><img src="https://images.unsplash.com/photo-1529626875320-c7557d7f6436?auto=format&fit=crop&q=80&w=400" alt="Momen 1"></div>
+                    <div class="swiper-slide"><img src="https://images.unsplash.com/photo-1516589429518-5b7b7c6c3d24?auto=format&fit=crop&q=80&w=400" alt="Momen 2"></div>
+                    <div class="swiper-slide"><img src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&q=80&w=400" alt="Momen 3"></div>
+                    <div class="swiper-slide"><img src="https://images.unsplash.com/photo-1518191360-9210045f5a5d?auto=format&fit=crop&q=80&w=400" alt="Momen 4"></div>
+                    <div class="swiper-slide"><img src="https://images.unsplash.com/photo-1524474039661-1e28c42e5192?auto=format&fit=crop&q=80&w=400" alt="Momen 5"></div>
+                    <div class="swiper-slide"><img src="https://images.unsplash.com/photo-1583939003579-730e3918a45a?auto=format&fit=crop&q=80&w=400" alt="Momen 6"></div>
+                </div>
+            </div>
+        </section>
+
         <!-- FOOTER -->
-        <footer class="footer">
-            <div class="head-orn" data-aos="fade-up" style="margin-bottom: 10px;"><i></i><span class="dia"></span><i></i></div>
-            <p class="thanks" data-aos="fade-up">Ungkapan terima kasih yang tulus dari kami atas kehadiran Anda.</p>
-            <div class="footer-names" data-aos="fade-up">Amelia Kartika Sari <span class="amp">&amp;</span> Afdan</div>
-            <div class="footer-date" data-aos="fade-up">27 . 03 . 2027</div>
-        </footer>
+    <footer class="footer">
+        <div class="head-orn" data-aos="fade-up" style="margin-bottom: 10px;"><i></i><span class="dia"></span><i></i></div>
+        <p class="thanks" data-aos="fade-up">Ungkapan terima kasih yang tulus dari kami atas kehadiran Anda.</p>
+        <div class="footer-names" data-aos="fade-up">Amelia Kartika Sari <span class="amp">&amp;</span> Afdan</div>
+        <div class="footer-date" data-aos="fade-up">27 . 03 . 2027</div>
+    
+        <!-- LOGO -->
+        <img src="https://pdftourl.net/images/1790690322819-a27e57d1-c6ce-408c-bea1-ad7c9edb69cf.jpg" class="footer-logo" alt="Logo" data-aos="fade-up">
+    
+        <!-- TEXT PROMO -->
+        <p data-aos="fade-up" style="font-size: .82rem; color: var(--muted); margin-bottom: 18px; margin-top: -8px;">Ingin buat juga? silahkan 👇</p>
+    
+        <!-- TOMBOL WA -->
+        <div data-aos="fade-up" style="text-align: center;">
+            <a href="https://wa.me/6287870260010?text=Halo%20N4R%20%26%20Design%2C%20saya%20ingin%20bertanya%20tentang%20undangan." class="btn-wa" target="_blank">
+                <i class="fa-brands fa-whatsapp"></i> Hubungi Kami
+            </a>
+            <p style="font-size: .72rem; color: var(--muted); margin-top: 10px; letter-spacing: .15em;">
+                <i class="fab fa-whatsapp" style="color: #25D366; font-size: .85rem;"></i> 0878-7026-0010
+            </p>
+        </div>
+    </footer>
 
     </div>
 
@@ -835,73 +778,67 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    
-    <!-- Firebase Compat -->
     <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-database-compat.js"></script>
 
     <script>
-        // Inisialisasi AOS (Animasi Scroll)
+        // Inisialisasi AOS
         AOS.init({ once: true, duration: 800, offset: 50 });
 
-        // Inisialisasi Swiper (Restu Orang Tua) + AUTOPLAY
+        // Swiper Restu Orang Tua
         new Swiper('.parent-swiper', {
             spaceBetween: 16,
             slidesPerView: 1,
-            pagination: { 
-                el: '.swiper-pagination', 
-                clickable: true 
-            },
-            autoplay: {
-                delay: 5000, 
-                disableOnInteraction: false, 
-            },
-            loop: true, 
+            pagination: { el: '.swiper-pagination', clickable: true },
+            autoplay: { delay: 5000, disableOnInteraction: false },
+            loop: true,
         });
 
-        // Inisialisasi GLightbox (Galeri)
+        // Swiper Momen Pacaran
+        new Swiper('.pacaran-swiper', {
+            slidesPerView: 2,
+            spaceBetween: 15,
+            loop: true,
+            centeredSlides: true,
+            autoplay: { delay: 2500, disableOnInteraction: false },
+            breakpoints: { 480: { slidesPerView: 3 } }
+        });
+
+        // GLightbox
         const lightbox = GLightbox({ selector: '.glightbox' });
 
-        // ===== MEMBUAT PARTIKEL EMAS (BINTIK-BINTIK JALAN) =====
-        function createParticles() {
-            const particleCount = 30; 
-            for (let i = 0; i < particleCount; i++) {
-                const particle = document.createElement('div');
-                particle.classList.add('particle');
-                
-                const size = Math.random() * 6 + 3; 
-                const left = Math.random() * 100; 
-                const duration = Math.random() * 8 + 6; 
-                const delay = Math.random() * 10; 
-
-                particle.style.width = `${size}px`;
-                particle.style.height = `${size}px`;
-                particle.style.left = `${left}%`;
-                particle.style.animationDuration = `${duration}s`;
-                particle.style.animationDelay = `${delay}s`;
-
-                document.body.appendChild(particle);
+        // ===== PARTIKEL EMAS =====
+        (function createParticles() {
+            for (let i = 0; i < 30; i++) {
+                const p = document.createElement('div');
+                p.classList.add('particle');
+                const size = Math.random() * 6 + 3;
+                p.style.width  = size + 'px';
+                p.style.height = size + 'px';
+                p.style.left   = (Math.random() * 100) + '%';
+                p.style.animationDuration = (Math.random() * 8 + 6) + 's';
+                p.style.animationDelay    = (Math.random() * 10) + 's';
+                document.body.appendChild(p);
             }
-        }
-        createParticles(); 
+        })();
 
-        // ===== LOGIKA SPLASH & MUSIK =====
-        const splash = document.getElementById('splash-screen');
+        // ===== SPLASH & MUSIK =====
+        const splash   = document.getElementById('splash-screen');
         const audioBtn = document.getElementById('audio-btn');
-        const audioIcon = document.getElementById('audio-icon');
-        const bgMusic = document.getElementById('bg-music');
-        let isPlaying = false;
+        const audioIcon= document.getElementById('audio-icon');
+        const bgMusic  = document.getElementById('bg-music');
+        let isPlaying  = false;
 
-        document.getElementById('btn-open-invitation').addEventListener('click', () => {
+        document.getElementById('btn-open-invitation').addEventListener('click', function () {
             splash.classList.add('hidden');
             document.getElementById('bottom-nav').classList.add('show');
             audioBtn.style.display = 'flex';
             document.getElementById('scroll-top').style.display = 'flex';
-            
-            bgMusic.play().then(() => {
+
+            bgMusic.play().then(function () {
                 isPlaying = true;
                 audioIcon.className = 'fas fa-pause';
-            }).catch(() => {
+            }).catch(function () {
                 isPlaying = false;
                 audioIcon.className = 'fas fa-music';
             });
@@ -918,48 +855,48 @@
             isPlaying = !isPlaying;
         }
 
-        // ===== LOGIKA COUNTDOWN =====
-        const weddingDate = new Date('2027-03-27T08:00:00+07:00').getTime();
-        setInterval(() => {
-            const now = new Date().getTime();
-            const diff = weddingDate - now;
+        // ===== COUNTDOWN =====
+        var weddingDate = new Date('2027-03-27T08:00:00+07:00').getTime();
+        setInterval(function () {
+            var now  = new Date().getTime();
+            var diff = weddingDate - now;
 
             if (diff <= 0) {
-                document.getElementById('days').innerText = '00';
-                document.getElementById('hours').innerText = '00';
+                document.getElementById('days').innerText    = '00';
+                document.getElementById('hours').innerText   = '00';
                 document.getElementById('minutes').innerText = '00';
                 document.getElementById('seconds').innerText = '00';
                 return;
             }
 
-            const d = Math.floor(diff / (1000 * 60 * 60 * 24));
-            const h = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const m = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-            const s = Math.floor((diff % (1000 * 60)) / 1000);
+            var d = Math.floor(diff / 86400000);
+            var h = Math.floor((diff % 86400000) / 3600000);
+            var m = Math.floor((diff % 3600000) / 60000);
+            var s = Math.floor((diff % 60000) / 1000);
 
-            document.getElementById('days').innerText = d.toString().padStart(2, '0');
-            document.getElementById('hours').innerText = h.toString().padStart(2, '0');
+            document.getElementById('days').innerText    = d.toString().padStart(2, '0');
+            document.getElementById('hours').innerText   = h.toString().padStart(2, '0');
             document.getElementById('minutes').innerText = m.toString().padStart(2, '0');
             document.getElementById('seconds').innerText = s.toString().padStart(2, '0');
         }, 1000);
 
-        // ===== LOGIKA COPY TO CLIPBOARD (Diperbaiki agar work di lokal) =====
+        // ===== COPY TO CLIPBOARD — FIX: baris corrupt dihapus =====
         function copyToClipboard(text, btn) {
-            const textarea = document.createElement("textarea");
+            var textarea = document.createElement('textarea');
             textarea.value = text;
-            textarea.style.position = "fixed";
-            textarea.style.left = "-9999px";
+            textarea.style.position = 'fixed';
+            textarea.style.left = '-9999px';
             document.body.appendChild(textarea);
             textarea.focus();
             textarea.select();
 
             try {
-                const successful = document.execCommand('copy');
+                var successful = document.execCommand('copy');
                 if (successful) {
-                    const icon = btn.querySelector('i');
+                    var icon = btn.querySelector('i');
                     icon.className = 'fas fa-check';
                     showToast('Berhasil disalin!');
-                    setTimeout(() => icon.className = 'far fa-copy', 2000);
+                    setTimeout(function () { icon.className = 'far fa-copy'; }, 2000);
                 } else {
                     showToast('Gagal menyalin, coba manual.');
                 }
@@ -971,26 +908,24 @@
         }
 
         function showToast(message) {
-            const toast = document.getElementById('toast');
+            var toast = document.getElementById('toast');
             toast.innerText = message;
             toast.classList.add('show');
-            setTimeout(() => toast.classList.remove('show'), 3000);
+            setTimeout(function () { toast.classList.remove('show'); }, 3000);
         }
 
-        // ===== NAV ACTIVE STATE ON SCROLL =====
-        const sections = document.querySelectorAll('section[id]');
-        const navLinks = document.querySelectorAll('.bottom-nav a');
-        
-        window.addEventListener('scroll', () => {
-            let current = '';
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                if (pageYOffset >= sectionTop - 300) {
+        // ===== NAV ACTIVE ON SCROLL =====
+        var sections = document.querySelectorAll('section[id]');
+        var navLinks = document.querySelectorAll('.bottom-nav a');
+
+        window.addEventListener('scroll', function () {
+            var current = '';
+            sections.forEach(function (section) {
+                if (pageYOffset >= section.offsetTop - 300) {
                     current = section.getAttribute('id');
                 }
             });
-
-            navLinks.forEach(link => {
+            navLinks.forEach(function (link) {
                 link.classList.remove('active');
                 if (link.getAttribute('href').includes(current)) {
                     link.classList.add('active');
@@ -998,8 +933,7 @@
             });
         });
 
-
-        // ===== UCAPAN ONLINE - FIREBASE (DATA TERPISAH: wedding2-comments) =====
+        // ===== FIREBASE — UCAPAN & RSVP =====
         var FIREBASE_CONFIG = {
             apiKey: "AIzaSyABJy_Ot8TYQUTX_79h2EWwjcL8_lLRRw0",
             authDomain: "komentar-d444e.firebaseapp.com",
@@ -1016,10 +950,10 @@
             weddingDB = firebase.database();
         } catch (e) { console.warn('Firebase gagal dimuat:', e); }
 
-        var wishListEl = document.getElementById('wish-list');
+        var wishListEl  = document.getElementById('wish-list');
         var wishEmptyEl = document.getElementById('wish-empty');
         var wishTotalEl = document.getElementById('wish-total');
-        var wishCount = 0;
+        var wishCount   = 0;
 
         function escHTML(s) {
             return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#039;');
@@ -1052,7 +986,7 @@
                 badge = '<span class="wish-badge ragu">' + escHTML(data.status || '-') + '</span>';
             }
 
-            var guestsTxt = (data.guests && data.guests > 1) ? ' · ' + data.guests + ' orang' : '';
+            var guestsTxt = (data.guests && data.guests > 1) ? ' \u00B7 ' + data.guests + ' orang' : '';
 
             var item = document.createElement('div');
             item.className = 'wish-item';
@@ -1070,23 +1004,21 @@
             else wishListEl.appendChild(item);
         }
 
-        // Muat semua ucapan (real-time) — FOLDER KHUSUS VERSI BARU
         if (weddingDB) {
-            weddingDB.ref('wedding2-comments').limitToLast(100).on('child_added', function(snap) {
+            weddingDB.ref('wedding2-comments').limitToLast(100).on('child_added', function (snap) {
                 renderWish(snap.val(), true);
-            }, function(err) {
+            }, function (err) {
                 console.warn('Gagal memuat ucapan:', err);
             });
         }
 
-        // RSVP versi online — tersimpan ke FOLDER KHUSUS VERSI BARU
         function submitRSVP() {
-            var nama = (document.getElementById('rsvp-name').value || '').trim().slice(0, 50);
+            var nama     = (document.getElementById('rsvp-name').value || '').trim().slice(0, 50);
             var attendEl = document.querySelector('input[name="attend"]:checked');
-            var guests = document.getElementById('rsvp-guests').value || '1';
-            var msg = (document.getElementById('rsvp-message').value || '').trim().slice(0, 500);
+            var guests   = document.getElementById('rsvp-guests').value || '1';
+            var msg      = (document.getElementById('rsvp-message').value || '').trim().slice(0, 500);
 
-            if (!nama) { showToast('Mohon isi nama Anda'); return; }
+            if (!nama)     { showToast('Mohon isi nama Anda'); return; }
             if (!attendEl) { showToast('Mohon pilih konfirmasi kehadiran'); return; }
 
             var status = (attendEl.value === 'hadir') ? 'Hadir' : 'Tidak Hadir';
@@ -1094,12 +1026,12 @@
 
             if (!weddingDB) { showToast('Gagal terhubung, coba lagi'); return; }
 
-            weddingDB.ref('wedding2-comments').push(data).then(function() {
+            weddingDB.ref('wedding2-comments').push(data).then(function () {
                 document.getElementById('rsvp-form-box').style.display = 'none';
                 document.getElementById('rsvp-success-name').innerText = nama;
-                document.getElementById('rsvp-success').style.display = 'block';
+                document.getElementById('rsvp-success').style.display  = 'block';
                 showToast('Terima kasih atas konfirmasinya');
-            }).catch(function() {
+            }).catch(function () {
                 showToast('Gagal mengirim, coba lagi');
             });
         }
