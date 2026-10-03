@@ -848,6 +848,21 @@
                 document.body.appendChild(p);
             }
         })();
+        
+
+       // ===== AMBIL NAMA TAMU DARI URL =====
+      (function () {
+          var params = new URLSearchParams(window.location.search);
+          var guestName = params.get('to') || params.get('nama') || '';
+
+          if (guestName) {
+              var box  = document.getElementById('splash-guest-box');
+              var span = document.getElementById('splash-guest-name');
+              span.innerText = guestName;
+              box.style.display = 'block';
+          }
+      })(); 
+
 
         // ===== SPLASH & MUSIK =====
         const splash   = document.getElementById('splash-screen');
