@@ -860,7 +860,11 @@
               var span = document.getElementById('splash-guest-name');
               span.innerText = guestName;
               box.style.display = 'block';
-              document.getElementById('rsvp-name').value = guestName;
+              var rsvpName = document.getElementById('rsvp-name');
+              rsvpName.value = guestName;
+              rsvpName.setAttribute('readonly', true);
+              rsvpName.style.opacity = '0.7';
+              rsvpName.style.cursor = 'not-allowed';
           }
       })(); 
 
